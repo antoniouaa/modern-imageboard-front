@@ -14,10 +14,11 @@ export default function Post(props) {
     views,
   } = props.details;
   return (
-    <div className="post">
+    <div className="Post">
       <h6>
         @{id}, By {name} at {date}
       </h6>
+      <hr />
       <h3>
         {content ? (
           <span>
@@ -28,6 +29,7 @@ export default function Post(props) {
         ) : (
           "Empty Post"
         )}
+        <hr />
       </h3>
       <span>Replied to: {replyto ? replyto : "No reply"}</span>
       <br />

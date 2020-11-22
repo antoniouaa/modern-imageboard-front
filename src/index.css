@@ -1,4 +1,8 @@
 body {
+    --background-primary: #c5cae9;
+    --background-dark: #9499b7;
+    --background-light: #f8fdff;
+    --footer-background: #282c34;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;

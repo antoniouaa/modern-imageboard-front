@@ -4,6 +4,8 @@ import GridList from "@material-ui/core/GridList";
 
 import Post from "./Post";
 
+import "./Styles.css";
+
 export default function Body() {
   const [posts, setPosts] = useState([]);
   const url = "https://modern-imageboard.herokuapp.com/allposts";

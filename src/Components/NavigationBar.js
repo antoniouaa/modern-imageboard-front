@@ -35,7 +35,7 @@ export default function NavigationBar(props) {
         <AppBar position="sticky">
           <Toolbar className="Navbar-Toolbar">
             <Typography variant="h4" className="Navbar-Title">
-              Modern-Imageboard
+              Modern Imageboard
             </Typography>
             <div className="Navbar-Button-Container">
               <Link to="/home">
