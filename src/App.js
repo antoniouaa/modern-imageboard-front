@@ -1,3 +1,6 @@
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import "./App.css";
 
 import NavigationBar from "./Components/NavigationBar";
@@ -6,12 +9,16 @@ import Body from "./Components/Body";
 
 export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <Router>
+      <div className="wrapper">
         <NavigationBar />
-        <Body />
+        <div className="App">
+          <Switch>
+            <Route path="/" component={Body} />
+          </Switch>
+        </div>
         <Footer />
-      </header>
-    </div>
+      </div>
+    </Router>
   );
 }
