@@ -14,14 +14,15 @@ export default function Body() {
       .then((data) => setPosts(data));
   }, []);
 
-  console.log(posts);
-
   return (
     <div className="Body">
       <GridList className="Body-Post-Grid" cols="1">
-        {posts.map((post, i) => {
-          return <Post details={post} />;
-        })}
+        {[]
+          .concat(posts)
+          .reverse()
+          .map((post, i) => {
+            return <Post details={post} />;
+          })}
       </GridList>
     </div>
   );
