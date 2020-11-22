@@ -18,11 +18,33 @@ export default function Post(props) {
       <h6>
         @{id}, By {name} at {date}
       </h6>
-      <h3>{content}</h3>
-      <p>Replied to: {replyto}</p>
-      <p>Viewed {views} times</p>
-      <p>Tags: {tags}</p>
-      <p>{filenames}</p>
+      <h3>
+        {content ? (
+          <span>
+            Content:
+            <br />
+            {content}
+          </span>
+        ) : (
+          "Empty Post"
+        )}
+      </h3>
+      <span>Replied to: {replyto ? replyto : "No reply"}</span>
+      <br />
+      <span>{views ? `Views: ${views}` : "No views"}</span>
+      <br />
+      <span>{tags ? `Tags: ${tags.join(", ")}` : ""}</span>
+      <br />
+      {filenames ? (
+        <div>
+          <span>Filenames:</span>
+          <ol>
+            {filenames.map((f) => (
+              <li>{f}</li>
+            ))}
+          </ol>
+        </div>
+      ) : null}
     </div>
   );
 }
