@@ -14,8 +14,9 @@
 }
 
 .post {
+    margin: 1rem auto;
+    width: 70%;
     background-color: #3e4f6b;
-    margin: 1rem;
     border: 2px solid white;
     border-radius: 10px;
 }

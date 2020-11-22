@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import GridList from "@material-ui/core/GridList";
+
 import Post from "./Post";
 
 export default function Body() {
@@ -15,10 +17,12 @@ export default function Body() {
   console.log(posts);
 
   return (
-    <div className="container post-container">
-      {posts.map((post) => {
-        return <Post details={post} />;
-      })}
+    <div className="Body">
+      <GridList className="Body-Post-Grid" cols="1">
+        {posts.map((post, i) => {
+          return <Post details={post} />;
+        })}
+      </GridList>
     </div>
   );
 }
