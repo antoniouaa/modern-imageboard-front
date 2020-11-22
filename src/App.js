@@ -6,6 +6,7 @@ import "./App.css";
 import NavigationBar from "./Components/NavigationBar";
 import Footer from "./Components/Footer";
 import Body from "./Components/Body";
+import About from "./Components/About";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <NavigationBar />
         <div className="App">
           <Switch>
+            <Route path="/about" component={About} />
             <Route path="/" component={Body} />
           </Switch>
         </div>

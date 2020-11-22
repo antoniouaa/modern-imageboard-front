@@ -13,6 +13,19 @@
     position: absolute
 }
 
+.About-Container {
+    padding: 1rem;
+    box-shadow: inset;
+    border: 2px solid white;
+    border-radius: 10px;
+    background: #3e4f6b;
+    color: inherit;
+}
+
+.About-Container a {
+    text-decoration: none;
+}
+
 .post {
     margin: 1rem auto;
     width: 70%;
