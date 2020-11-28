@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./Styles.css";
 
@@ -21,15 +21,20 @@ export default function MakePost({ onFormPost }) {
     fetch(URL, {
       method: "POST",
       body: formData,
-    }).then((resp) => {
-      console.log(resp);
+    }).then(() => {
+      clearForm();
       onFormPost();
     });
+  };
+
+  const clearForm = () => {
+    document.querySelector("#post-form").reset();
   };
 
   return (
     <div>
       <form
+        id="post-form"
         className="Form"
         encType="multipart/form-data"
         onSubmit={handleFormSubmit}>
