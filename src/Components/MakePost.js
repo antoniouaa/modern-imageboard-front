@@ -39,7 +39,7 @@ export default function MakePost({ onFormPost }) {
         encType="multipart/form-data"
         onSubmit={handleFormSubmit}>
         <div className="Form-Text-Input">
-          <h3>Make a new Post</h3>
+          <h3 className="MakePost-Header">Make a new Post</h3>
           <input type="text" id="name" name="name" placeholder="Name" />
           <textarea
             className="Form-TextArea"

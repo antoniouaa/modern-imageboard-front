@@ -9,7 +9,6 @@ import "./Styles.css";
 
 export default function Body() {
   const [posts, setPosts] = useState([]);
-  // const [update, setUpdate] = useState("");
   const URL = "https://modern-imageboard.herokuapp.com/allposts";
 
   useEffect(() => {

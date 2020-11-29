@@ -1,16 +1,23 @@
 .Navbar-Toolbar {
+    background-color: var(--background-dark);
+    color: var(--nav-font-color);
     flex-grow: 1;
     justify-content: space-evenly;
 }
 
 .Navbar-Toolbar .Navbar-Button {
     align-self: flex-end;
-    color: white;
+    color: var(--nav-font-color);
     flex-grow: 1;
 }
 
 .Navbar-Toolbar .NavBar-Title {
+    color: var(--nav-font-color);
     position: absolute
+}
+
+.Body {
+    background-color: var(--background-primary);
 }
 
 .About-Container {
@@ -27,12 +34,12 @@
     box-shadow: inset;
     border: 0px solid white;
     border-radius: 10px;
-    background: var(--background-dark);
-    color: inherit;
+    background: var(--background-post-primary);
 }
 
 .About-Container a {
     text-decoration: none;
+    color: var(--nav-font-color);
 }
 
 .Post {
@@ -40,7 +47,7 @@
     text-align: left;
     padding: 0 1rem 1rem 1rem;
     width: 65%;
-    background-color: var(--background-dark);
+    background-color: var(--background-post-primary);
     border-radius: 4px;
 }
 
@@ -69,8 +76,14 @@
     resize: none;
 }
 
+.MakePost-Header,
+.Form-Files {
+    color: var(--nav-font-color);
+}
+
 .Footer-Toolbar {
     background: var(--footer-background);
+    color: var(--nav-font-color);
     width: 100%;
     display: flex;
     align-items: center;
@@ -78,5 +91,5 @@
 }
 
 .Footer-Toolbar .Footer-Link {
-    color: white;
+    color: var(--nav-font-color);
 }

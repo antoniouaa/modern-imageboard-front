@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import "./Styles.css";
+
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -38,7 +40,7 @@ export default function NavigationBar(props) {
               Modern Imageboard
             </Typography>
             <div className="Navbar-Button-Container">
-              <Link to="/home">
+              <Link to="/">
                 <Button className="Navbar-Button">Home</Button>
               </Link>
               <Link to="/about">

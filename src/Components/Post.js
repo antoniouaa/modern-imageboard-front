@@ -31,13 +31,13 @@ export default function Post(props) {
         )}
         <hr />
       </h3>
-      <span>Replied to: {replyto ? replyto : "No reply"}</span>
-      <br />
-      <span>{views ? `Views: ${views}` : "No views"}</span>
-      <br />
-      <span>{tags ? `Tags: ${tags.join(", ")}` : ""}</span>
-      <br />
-      {filenames ? (
+      {replyto ? <span>Replied To: #{replyto}</span> : null}
+      {views ? <span>Views: {views}</span> : null}
+      {Array.isArray(tags) && tags.length ? (
+        <span>Tags: {tags.map((tag) => `#${tag}`).join(" ")}</span>
+      ) : null}
+      {console.log(replyto)}
+      {Array.isArray(filenames) && filenames.length ? (
         <div>
           <span>Filenames:</span>
           <ol>
