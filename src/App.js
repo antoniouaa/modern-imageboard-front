@@ -9,6 +9,8 @@ import Thread from "./Components/Thread";
 import Footer from "./Components/Footer";
 import Body from "./Components/Body";
 import About from "./Components/About";
+import Contact from "./Components/Contact";
+import TOS from "./Components/TOS";
 
 export default function App() {
   return (
@@ -18,7 +20,9 @@ export default function App() {
         <NavigationBar />
         <div className="App">
           <Switch>
-            <Route path="/post/:id" component={(id) => <Thread id={id} />} />
+          <Route path="/post/:id" component={(id) => <Thread id={id} />} />
+            <Route path="/terms" component={() => <TOS />} />
+            <Route path="/contact" component={() => <Contact />} />
             <Route path="/about" component={() => <About />} />
             <Route path="/" component={() => <Body />} />
           </Switch>

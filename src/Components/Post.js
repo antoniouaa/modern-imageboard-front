@@ -23,13 +23,13 @@ export default function Post(props) {
       <h3>
         {content ? (
           <span>
-            Content:
             <br />
             {content}
           </span>
         ) : (
           "Empty Post"
         )}
+        <hr />
       </h3>
       <span>
         <Link to={`/post/${id}`}>View Thread</Link>
