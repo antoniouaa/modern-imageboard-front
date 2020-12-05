@@ -14,7 +14,6 @@ export default function Post({ details, linksTo, replies = [] }) {
       <h3>
         {content ? (
           <span>
-            Content:
             <br />
             {content}
           </span>
