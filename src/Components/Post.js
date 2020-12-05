@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./Styles.css";
 
@@ -29,8 +30,11 @@ export default function Post(props) {
         ) : (
           "Empty Post"
         )}
-        <hr />
       </h3>
+      <span>
+        <Link to={`/post/${id}`}>View Thread</Link>
+      </span>
+      <hr />
       {replyto ? <span>Replied To: #{replyto}</span> : null}
       {views ? <span>Views: {views}</span> : null}
       {Array.isArray(tags) && tags.length ? (

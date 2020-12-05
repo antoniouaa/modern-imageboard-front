@@ -43,6 +43,7 @@
 }
 
 .Post {
+    text-decoration: none;
     margin: 1rem auto;
     text-align: left;
     padding: 0 1rem 1rem 1rem;
