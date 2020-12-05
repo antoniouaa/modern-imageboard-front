@@ -3,17 +3,9 @@ import { Link } from "react-router-dom";
 
 import "./Styles.css";
 
-export default function Post(props) {
-  const {
-    content,
-    date,
-    filenames,
-    id,
-    name,
-    replyto,
-    tags,
-    views,
-  } = props.details;
+export default function Post({ details, linksTo, replies = [] }) {
+  const { content, date, filenames, id, name, replyto, tags, views } = details;
+  const [repl] = replies;
   return (
     <div className="Post">
       <h6>
@@ -26,21 +18,19 @@ export default function Post(props) {
             <br />
             {content}
           </span>
-        ) : (
-          "Empty Post"
-        )}
-        <hr />
+        ) : null}
       </h3>
-      <span>
-        <Link to={`/post/${id}`}>View Thread</Link>
-      </span>
+      {linksTo ? (
+        <span>
+          <Link to={`/post/${id}`}>View Thread</Link>
+        </span>
+      ) : null}
       <hr />
       {replyto ? <span>Replied To: #{replyto}</span> : null}
       {views ? <span>Views: {views}</span> : null}
       {Array.isArray(tags) && tags.length ? (
         <span>Tags: {tags.map((tag) => `#${tag}`).join(" ")}</span>
       ) : null}
-      {console.log(replyto)}
       {Array.isArray(filenames) && filenames.length ? (
         <div>
           <span>Filenames:</span>
@@ -51,6 +41,9 @@ export default function Post(props) {
           </ol>
         </div>
       ) : null}
+      {Array.isArray(repl) && repl.length
+        ? repl.map((r) => <Post details={r} linksTo={false} replies={[]} />)
+        : null}
     </div>
   );
 }
