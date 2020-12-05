@@ -29,5 +29,5 @@ export default function Thread(props) {
 
   console.log(thread);
 
-  return <Post details={rootPost} linksTo={false} replies={[thread]} />;
+  return <Post details={rootPost} linksTo={false} replies={thread} />;
 }

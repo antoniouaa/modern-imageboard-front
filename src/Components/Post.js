@@ -5,7 +5,6 @@ import "./Styles.css";
 
 export default function Post({ details, linksTo, replies = [] }) {
   const { content, date, filenames, id, name, replyto, tags, views } = details;
-  const [repl] = replies;
   return (
     <div className="Post">
       <h6>
@@ -42,8 +41,8 @@ export default function Post({ details, linksTo, replies = [] }) {
           </ol>
         </div>
       ) : null}
-      {Array.isArray(repl) && repl.length
-        ? repl.map((r) => <Post details={r} linksTo={false} replies={[]} />)
+      {Array.isArray(replies) && replies.length
+        ? replies.map((r) => <Post details={r} linksTo={false} />)
         : null}
     </div>
   );
