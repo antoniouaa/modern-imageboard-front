@@ -26,7 +26,7 @@ export default function Body() {
       <MakePost onFormPost={updatePage} />
       <GridList className="Body-Post-Grid" cols="1">
         {[].concat(posts).map((post, i) => {
-          return <Post details={post} />;
+          return <Post details={post} linksTo={true} />;
         })}
       </GridList>
     </div>
