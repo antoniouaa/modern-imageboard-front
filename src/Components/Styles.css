@@ -1,6 +1,96 @@
-.post {
-    background-color: #3e4f6b;
-    margin: 1rem;
-    border: 2px solid white;
+.Navbar-Toolbar {
+    background-color: var(--background-dark);
+    color: var(--nav-font-color);
+    flex-grow: 1;
+    justify-content: space-evenly;
+}
+
+.Navbar-Toolbar .Navbar-Button {
+    align-self: flex-end;
+    color: var(--nav-font-color);
+    flex-grow: 1;
+}
+
+.Navbar-Toolbar .NavBar-Title {
+    color: var(--nav-font-color);
+    position: absolute
+}
+
+.Body {
+    background-color: var(--background-primary);
+}
+
+.About-Container {
+    width: 100%;
+    padding-right: 17px;
+    height: calc(100vh - 128px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.About {
+    padding: 1rem;
+    box-shadow: inset;
+    border: 0px solid white;
     border-radius: 10px;
+    background: var(--background-post-primary);
+}
+
+.About-Container a {
+    text-decoration: none;
+    color: var(--nav-font-color);
+}
+
+.Post {
+    text-decoration: none;
+    margin: 1rem auto;
+    text-align: left;
+    padding: 0 1rem 1rem 1rem;
+    width: 65%;
+    background-color: var(--background-post-primary);
+    border-radius: 4px;
+}
+
+.Form {
+    margin: auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Form-Text-Input {
+    margin: auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Form-Button {
+    margin: auto;
+    width: 20%;
+    height: 2rem;
+}
+
+.Form-TextArea {
+    outline: none;
+    resize: none;
+}
+
+.MakePost-Header,
+.Form-Files {
+    color: var(--nav-font-color);
+}
+
+.Footer-Toolbar {
+    background: var(--footer-background);
+    color: var(--nav-font-color);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Footer-Toolbar .Footer-Link {
+    color: var(--nav-font-color);
 }

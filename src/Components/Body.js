@@ -1,24 +1,34 @@
 import React, { useEffect, useState } from "react";
 
+import GridList from "@material-ui/core/GridList";
+
 import Post from "./Post";
+import MakePost from "./MakePost";
+
+import "./Styles.css";
 
 export default function Body() {
   const [posts, setPosts] = useState([]);
-  const url = "https://modern-imageboard.herokuapp.com/allposts";
+  const URL = "https://modern-imageboard.herokuapp.com/allposts";
 
   useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setPosts(data));
+    updatePage();
   }, []);
 
-  console.log(posts);
+  const updatePage = () => {
+    fetch(URL)
+      .then((res) => res.json())
+      .then((data) => setPosts(data));
+  };
 
   return (
-    <div className="container post-container">
-      {posts.map((post) => {
-        return <Post details={post} />;
-      })}
+    <div className="Body">
+      <MakePost onFormPost={updatePage} />
+      <GridList className="Body-Post-Grid" cols="1">
+        {[].concat(posts).map((post, i) => {
+          return <Post details={post} />;
+        })}
+      </GridList>
     </div>
   );
 }

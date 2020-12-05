@@ -1,17 +1,30 @@
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import "./App.css";
 
+import ScrollToTop from "./ScrollToTop";
 import NavigationBar from "./Components/NavigationBar";
+import Thread from "./Components/Thread";
 import Footer from "./Components/Footer";
 import Body from "./Components/Body";
+import About from "./Components/About";
 
 export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <Router>
+      <ScrollToTop />
+      <div className="wrapper">
         <NavigationBar />
-        <Body />
+        <div className="App">
+          <Switch>
+            <Route path="/post/:id" component={(id) => <Thread id={id} />} />
+            <Route path="/about" component={() => <About />} />
+            <Route path="/" component={() => <Body />} />
+          </Switch>
+        </div>
         <Footer />
-      </header>
-    </div>
+      </div>
+    </Router>
   );
 }

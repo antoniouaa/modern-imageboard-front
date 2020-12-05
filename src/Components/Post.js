@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./Styles.css";
 
@@ -14,15 +15,42 @@ export default function Post(props) {
     views,
   } = props.details;
   return (
-    <div className="post">
+    <div className="Post">
       <h6>
         @{id}, By {name} at {date}
       </h6>
-      <h3>{content}</h3>
-      <p>Replied to: {replyto}</p>
-      <p>Viewed {views} times</p>
-      <p>Tags: {tags}</p>
-      <p>{filenames}</p>
+      <hr />
+      <h3>
+        {content ? (
+          <span>
+            Content:
+            <br />
+            {content}
+          </span>
+        ) : (
+          "Empty Post"
+        )}
+      </h3>
+      <span>
+        <Link to={`/post/${id}`}>View Thread</Link>
+      </span>
+      <hr />
+      {replyto ? <span>Replied To: #{replyto}</span> : null}
+      {views ? <span>Views: {views}</span> : null}
+      {Array.isArray(tags) && tags.length ? (
+        <span>Tags: {tags.map((tag) => `#${tag}`).join(" ")}</span>
+      ) : null}
+      {console.log(replyto)}
+      {Array.isArray(filenames) && filenames.length ? (
+        <div>
+          <span>Filenames:</span>
+          <ol>
+            {filenames.map((f) => (
+              <li>{f}</li>
+            ))}
+          </ol>
+        </div>
+      ) : null}
     </div>
   );
 }
