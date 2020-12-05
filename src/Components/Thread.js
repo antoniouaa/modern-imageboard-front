@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import Post from "./Post";
 
-export default function Thread(props) {
+export default function Thread() {
   const { postId } = useParams();
 
   let url = new URL("https://modern-imageboard.herokuapp.com/replies");
@@ -29,5 +29,9 @@ export default function Thread(props) {
 
   console.log(thread);
 
-  return <Post details={rootPost} linksTo={false} replies={thread} />;
+  return (
+    <div className="Post-Container">
+      <Post details={rootPost} linksTo={false} replies={thread} />
+    </div>
+  );
 }

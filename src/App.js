@@ -20,7 +20,7 @@ export default function App() {
         <NavigationBar />
         <div className="App">
           <Switch>
-          <Route path="/post/:id" component={(id) => <Thread id={id} />} />
+            <Route path="/post/:postId" component={() => <Thread />} />
             <Route path="/terms" component={() => <TOS />} />
             <Route path="/contact" component={() => <Contact />} />
             <Route path="/about" component={() => <About />} />
