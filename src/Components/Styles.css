@@ -39,7 +39,7 @@
     background: var(--background-post-primary);
 }
 
-.About-Container,
+.About-Container a,
 .Contact-Container a {
     text-decoration: none;
     color: var(--nav-font-color);

@@ -11,6 +11,7 @@ import Body from "./Components/Body";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import TOS from "./Components/TOS";
+import Delete from "./Components/Delete";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <NavigationBar />
         <div className="App">
           <Switch>
+            <Route path="/delete/:postId" component={() => <Delete />}/>
             <Route path="/post/:postId" component={() => <Thread />} />
             <Route path="/terms" component={() => <TOS />} />
             <Route path="/contact" component={() => <Contact />} />

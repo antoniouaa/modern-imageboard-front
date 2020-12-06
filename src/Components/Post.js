@@ -21,7 +21,7 @@ export default function Post({ details, linksTo, replies = [] }) {
       </h3>
       {linksTo ? (
         <span>
-          <Link to={`/post/${id}`}>View Thread</Link>
+          <Link to={`/post/${id}`}>View Thread</Link> <Link to={`/delete/${id}`}>Delete</Link>
         </span>
       ) : null}
       <hr />
